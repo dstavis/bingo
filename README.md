@@ -1,5 +1,5 @@
 # Interactive Bingo
-##Goal: ### A bingo game playable in the web browser.
+## Goal: ### A bingo game playable in the web browser.
 
 Features:
 - can receive a number of inputs that is higher than the total number of boxes on the bingo card itself
