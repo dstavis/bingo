@@ -1,0 +1,25 @@
+.bingo-box {
+  background-color: blue;
+
+  height: 140px;
+  width: 140px;
+
+  border-width: 2px;
+  border-style: solid;
+
+  /* Keeps the text from expanding the box */
+  overflow-wrap: anywhere;
+}
+
+#box-holder{
+  background-color: red;
+  display:inline-block;
+}
+
+thead th {
+    height: 70px;
+    font-size: 2em;
+    border-width: 2px;
+    border-style: solid;
+    column-span: all;
+}
