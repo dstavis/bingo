@@ -19,12 +19,17 @@ function displayBoxes(numberOfRows, content){
       for(var j = 0; j < numberOfRows; j++){
         var box = document.createElement("td")
         box.classList.add("bingo-box")
+
         var div = document.createElement("div")
         var span = document.createElement("span")
         span.innerText = getRandomUniqueData(content)
+
         div.append(span)
+
         box.append(div)
+
         dataCounter++
+
         row.append(box)
       }
       tableBody.append(row)
