@@ -1,25 +1,83 @@
+/* Teal dark: #036575 light: #12f1fc  ?: #05c2d1*/
+/* Yellow dark: light: #f9ae06 */
+/* Red dark: light: #ef3852 */
+/* White */
+/* Dark Grey #4d4d4f #6d6e71 #2b2b2b */
+
+/* Turing Teal  #82E0AA */ /* old #9FE2BF */
+/* dark #186A3B */
+/* Turing Yellow  #F5B041*/ /* old #FFBF00 */
+/* dark #7E5109 */
+/* Turing Red #EC7063 */ /* old #DE3163 */
+/* dark  #78281F */
+
+
+#box-holder{
+  background-color: white;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 5%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead th {
+    font-family: 'Roboto Slab', serif;
+
+    height: 70px;
+    font-size: 2em;
+
+    background-color: #12f1fc;
+    color: #036575;
+
+    border-width: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-style: solid;
+    border-color: white;
+}
+
 .bingo-box {
-  background-color: blue;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f9ae06;
+  color: #7E5109;
+  text-align: center;
 
   height: 140px;
   width: 140px;
 
-  border-width: 2px;
+  border-width: 5px;
   border-style: solid;
+  border-collapse: collapse;
+  border-color: white;
 
   /* Keeps the text from expanding the box */
   overflow-wrap: anywhere;
 }
 
-#box-holder{
-  background-color: red;
-  display:inline-block;
+tbody tr:nth-child(odd) .bingo-box:nth-child(even){
+  background-color: #ef3852 ;
+  color: #78281F;
 }
 
-thead th {
-    height: 70px;
-    font-size: 2em;
-    border-width: 2px;
-    border-style: solid;
-    column-span: all;
+tbody tr:nth-child(even) .bingo-box:nth-child(odd){
+  background-color: #ef3852 ;
+  color: #78281F;
+}
+
+tfoot th {
+  height: 20px;
+
+  background-color: #12f1fc;
+
+  border-width: 2px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-style: solid;
+  border-color: white;
 }

@@ -1,14 +1,15 @@
+var answerPropName = 'Tell us one short fun fact about yourself!'
+'Tell us one short fun fact about yourself!'
 
-const sampleData = []
-
-function createSampleData(howMany){
-  for(var i = 0;i<howMany;i++){
-      sampleData.push(generateString(49))
-  }
+function getRandomUniqueData(array){
+  // get a random number between 0 and surveyResponses.length
+  var randomIndex = Math.floor(Math.random() * array.length)
+  // pull the answer with that index out of the array and delete it from the array
+  return array.splice(randomIndex, 1)[0][answerPropName]
+  // return the answer we pulled out
 }
 
-
-function displayBoxes(numberOfRows){
+function displayBoxes(numberOfRows, content){
   var tableBody = document.querySelector("#box-holder tbody")
   var dataCounter = 0;
 
@@ -18,7 +19,11 @@ function displayBoxes(numberOfRows){
       for(var j = 0; j < numberOfRows; j++){
         var box = document.createElement("td")
         box.classList.add("bingo-box")
-        box.innerText = sampleData[dataCounter]
+        var div = document.createElement("div")
+        var span = document.createElement("span")
+        span.innerText = getRandomUniqueData(content)
+        div.append(span)
+        box.append(div)
         dataCounter++
         row.append(box)
       }
@@ -26,6 +31,5 @@ function displayBoxes(numberOfRows){
   }
 }
 
-createSampleData(31)
 
-displayBoxes(4)
+displayBoxes(4, surveyResponses)
