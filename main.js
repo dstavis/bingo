@@ -1,40 +1,35 @@
-var answerPropName = 'Tell us one short fun fact about yourself!'
-'Tell us one short fun fact about yourself!'
-
-function getRandomUniqueData(array){
-  // get a random number between 0 and surveyResponses.length
-  var randomIndex = Math.floor(Math.random() * array.length)
-  // pull the answer with that index out of the array and delete it from the array
-  return array.splice(randomIndex, 1)[0][answerPropName]
-  // return the answer we pulled out
-}
-
 const numberOfRows = 4;
 var currentCard = undefined;
 
-function createNewUser(username){
-  var newCard = new Card(username, numberOfRows)
+// QuerySelectors and Event Listeners
 
-  currentCard = newCard;
+var usernameSubmitButton = document.querySelector('#user-ID button')
+var usernameTextInput = document.querySelector('input#username')
+
+usernameSubmitButton.addEventListener('click', usernameClickHandler)
+
+function usernameClickHandler(eventObject){
+  createNewUser(usernameTextInput.value)
+  // TODO: erase value
+  // TODO: update message to indicate that we now have a user
 }
+
+// Next: Save card in localStorage using ID username?
+// Restore ID in localStorage using ID username?
+// Let the user switch which card from storage by inputting a username that's already stored?
+
 
 function displayBoxes(numberOfRows){
   var tableBody = document.querySelector("#box-holder tbody")
-
   for(var i = 0; i < numberOfRows; i++){
       var row = document.createElement("tr")
-
       for(var j = 0; j < numberOfRows; j++){
         var box = document.createElement("td")
         box.classList.add("bingo-box")
-
         var div = document.createElement("div")
         var span = document.createElement("span")
-
         div.append(span)
-
         box.append(div)
-
         row.append(box)
       }
       tableBody.append(row)
@@ -49,10 +44,21 @@ function updateBoxContents(card){
   }
 }
 
-function start(){
-  createNewUser("Test Testerson")
-  displayBoxes(numberOfRows)
+function createNewUser(username){
+  var newCard = new Card(username, numberOfRows)
+  localStorage.setItem(username, JSON.stringify(newCard))
+  currentCard = newCard;
   updateBoxContents(currentCard)
+}
+
+function loadUser(username){
+  var userCard = JSON.parse(localStorage[username])
+  currentCard = userCard
+  updateBoxContents(currentCard)
+}
+
+function start(){
+  displayBoxes(numberOfRows)
 }
 
 start()

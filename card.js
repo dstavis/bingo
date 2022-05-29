@@ -7,11 +7,12 @@ class Card{
   }
 
   generateCells(numberOfCells){
+    var surveyCopy = [...surveyResponses]
     for(var i = 0;i<numberOfCells;i++){
       this.cells.push(
         new Cell(
         {
-          content: getRandomUniqueData(surveyResponses),
+          content: getRandomUniqueData(surveyCopy),
           index: i
         }
         )
