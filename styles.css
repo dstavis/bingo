@@ -11,11 +11,24 @@
 /* Turing Red #EC7063 */ /* old #DE3163 */
 /* dark  #78281F */
 
+html{
+  /* background-image:
+        linear-gradient(243deg, rgba(127,255,212,.8), rgba(127,255,212,0) 50.00%),
+        linear-gradient(135deg, rgba(135,206,235,.8), rgba(135,206,235,0) 50.00%),
+        linear-gradient(351deg, rgba(221,160,221,.8), rgba(221,160,221,0) 50.00%),
+        url("https://media.istockphoto.com/photos/watercolor-chaotic-texture-picture-id1155961815?k=20&m=1155961815&s=612x612&w=0&h=3Q9-viGygS63W1lVQxnuW4PqCbfZ-mGZDg8Uh8qoBuc=");
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        background-attachment: fixed; */
+}
+
+
 
 #box-holder{
-  background-color: white;
-  border-radius: 10px;
-
   display: flex;
   justify-content: center;
 
@@ -24,6 +37,9 @@
 
 table {
   border-collapse: collapse;
+  border-radius: 10px;
+
+  /* border: 2px solid white; */
 }
 
 thead th {
@@ -38,8 +54,10 @@ thead th {
     border-width: 2px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    border-style: solid;
-    border-color: white;
+    /* border-top: solid 2px #036575;
+    border-left: solid 2px #036575;
+    border-right: solid 2px #036575; */
+
 }
 
 .bingo-box {
@@ -54,9 +72,9 @@ thead th {
   width: 140px;
 
   border-width: 5px;
-  border-style: solid;
+  /* border-style: solid; */
   border-collapse: collapse;
-  border-color: white;
+  /* border-color: white; */
 
   /* Keeps the text from expanding the box */
   overflow-wrap: anywhere;
@@ -80,6 +98,6 @@ tfoot th {
   border-width: 2px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-style: solid;
-  border-color: white;
+  /* border-style: solid; */
+  /* border-color: white; */
 }
