@@ -1,3 +1,15 @@
+var answerPropName = 'Tell us one short fun fact about yourself!'
+'Tell us one short fun fact about yourself!'
+
+function getRandomUniqueData(array){
+  // get a random number between 0 and surveyResponses.length
+  var randomIndex = Math.floor(Math.random() * array.length)
+  // pull the answer with that index out of the array and delete it from the array
+  return array.splice(randomIndex, 1)[0][answerPropName]
+  // return the answer we pulled out
+}
+
+
 const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
 function generateString(length) {
