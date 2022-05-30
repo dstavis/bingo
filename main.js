@@ -6,21 +6,23 @@ var currentCard = undefined;
 // ************ end SETTINGS ************
 
 // ************ QuerySelectors and Event Listeners ************
-
+var userIDSection = document.querySelector('#user-ID')
 var usernameSubmitButton = document.querySelector('#user-ID button')
 var usernameTextInput = document.querySelector('input#username')
+var stickerUsername = document.querySelector("#sticker-username")
 
-// usernameSubmitButton.addEventListener('click', usernameClickHandler)
+usernameSubmitButton.addEventListener('click', usernameClickHandler)
 
 function usernameClickHandler(eventObject){
   createNewUser(usernameTextInput.value)
-  // TODO: erase form input value
-  // TODO: update message to indicate that we now have a user
+  // TODO: hide input form
+  userIDSection.classList.add("hidden")
+  // TODO: put username in sticker
+  stickerUsername.value = currentCard.username
 }
 
-// Next: Save card in localStorage using ID username?
-// Restore ID in localStorage using ID username?
-// Let the user switch which card from storage by inputting a username that's already stored?
+
+// Next: Let the user switch which card from storage by inputting a username that's already stored?
 
 // ************ end QuerySelectors and Event Listeners ************
 
@@ -85,12 +87,12 @@ function createNewUser(username){
   updateBoxContents(currentCard)
 }
 
-function loadUser(username){
-  var userCard = JSON.parse(localStorage[username])
-  currentCard = userCard
-  updateBoxContents(currentCard)
-  updateLatestUser(username)
-}
+// function loadUser(username){
+//   var userCard = JSON.parse(localStorage[username])
+//   currentCard = userCard
+//   updateBoxContents(currentCard)
+//   updateLatestUser(username)
+// }
 
 function updateLatestUser(username){
   localStorage.setItem('latestUser', username)
@@ -102,6 +104,10 @@ function loadLatestUser(){
     var userCard = JSON.parse(localStorage.getItem(username))
     currentCard = userCard
     updateBoxContents(currentCard)
+    stickerUsername.value = currentCard.username
+  } else { // no latestUser
+    // display a submit button for the name tag
+    userIDSection.classList.remove("hidden")
   }
 }
 

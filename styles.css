@@ -35,13 +35,17 @@ html{
   margin-top: 5%;
 }
 
+.hidden{
+  display: none;
+}
+
 #nametag {
   position: relative;
   left: 22px;
   top: 11.5%;
 }
 
-#username{
+#sticker-username{
   font-family: 'Permanent Marker', cursive;
   text-align: center;
   font-size: 16px;
@@ -51,13 +55,13 @@ html{
 
 }
 
-#username:valid:not(:focus, .emptyName){
+#sticker-username:valid:not(:focus){
   border: 0px;
 }
 
-.emptyName, #username:invalid{
+/* .emptyName, #username:invalid{
   border: 2px red dashed;
-}
+} */
 
 .tag {
   border-radius: 5px;
