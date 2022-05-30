@@ -28,12 +28,81 @@ html{
 
 
 
-#box-holder{
+#card-holder{
   display: flex;
   justify-content: center;
 
   margin-top: 5%;
 }
+
+#nametag {
+  position: relative;
+  left: 22px;
+  top: 11.5%;
+}
+
+#username{
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  font-size: 16px;
+  width: 140px;
+
+  /* Next: Give the input a type attribute in html so that it validates only when it isn't empty of text, so that the :valid pseudoclass will not apply when it is empty (like when the page loads and there is no default user) */
+
+}
+
+#username:valid:not(:focus, .emptyName){
+  border: 0px;
+}
+
+.emptyName, #username:invalid{
+  border: 2px red dashed;
+}
+
+.tag {
+  border-radius: 5px;
+  border: 2px solid #de1f35;
+  background: white;
+  width: 150px;
+  height: 70px;
+
+  transform: rotate(0.995turn);
+}
+
+.tag header {
+  background: #de1f35;
+  padding: 0.5px;
+}
+
+.hello {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+
+.mynameis {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 10px;
+}
+
+.dottedline {
+  border-top: 1px solid grey;
+  margin-top: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+
+
+
+
+
+
 
 table {
   border-collapse: collapse;
@@ -45,7 +114,7 @@ table {
 thead th {
     font-family: 'Roboto Slab', serif;
 
-    height: 70px;
+    height: 100px;
     font-size: 2em;
 
     background-color: #12f1fc;
@@ -78,6 +147,13 @@ thead th {
 
   /* Keeps the text from expanding the box */
   overflow-wrap: anywhere;
+}
+
+.complete {
+  outline-width: 4px;
+  outline-color: black;
+  outline-offset: -3px;
+  outline-style: solid;
 }
 
 tbody tr:nth-child(odd) .bingo-box:nth-child(even){
